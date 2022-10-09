@@ -1,0 +1,83 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+
+   <<< 8 >>>
+   
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between <<< and >>> signs below (eg, <<<3>>>).
+
+   <<< 3 >>>
+
+3. Did you receive help from anyone? List their names, status (classmate,
+   CS210 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+    FROM TA IN DISCUSSION           WE DID EXERCISES IN CLASS
+   ...                ...          ...
+
+4. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Deque)
+       Approach: We have to create a double eded queue or a deque "deck". It's just a generalization of a stack and a
+       queue that supports, adding, removing items from either front of the back of data structure. We have to create an
+       iterable data type called Linked Deque, that uses a double linked list to implement api's. We push an item at
+       the rear or front end of deque. And pop an item from both rear and front end. First Api is LinkedDeque. creating
+       an empty deque. We initialize the references ( node pointers )to the front and back of deque as null and size
+       as 0 since it is empty. These nodes represent the structure of a node of a double linked list. We then
+       check is the deque is empty or not, because we cant work on an empty list, its already "solved"
+       If it's false, deque has data, then we find the length of the deque. This will be the data stored in n.
+
+
+       Now we need to add items the front and last of the queue, then peek. This is (push) We create new node called
+       previous_front that stores value of the front of queue. Notice last = first if que is empty,
+       because queue is only having one element, so front and rear will stand in the same node.
+       We do the same for the back of the queue. But if the queue is not empty then we use temp Previous_last and
+       Previous_first to help refer data to the new node. Then we increment n by 1 to repeat for each node.
+
+       Now we work on the pop, where we remove nodes in the queue. Api worked on are remove first, peek last and remove
+       last. These remove elements from both ends of the queues. Remove first discards the current items from the deque
+       while remove last removes the last element from node.
+
+       the peek api's are used to get the elements from the front and back end nodes of the queue for inspections.
+       These will not remove nor add elements. peek last looks at last element and peek first looks at first elements.
+
+       Issues and resolution: I have 4 issues in grade scope.
+
+            org.opentest4j.AssertionFailedError:
+            Both first and last should be null after all items have been removed
+             ==> expected: <null> but was: <17>
+
+   Problem 2 (Sorting Strings)
+       Approach: We are implementing a program that accepts strings from user, and stores them in the linkedDeque
+       data structure created in problem 1. We use operations created in problems 1 to help sort the string in problem
+        2. It sorts the deque and outputs sorted strings. So we create dequeue d. then assign w to read the strings.
+
+        then using if, else-if and else statements with conditions such as if w is less than first letter, then if w
+        greater than last word, and else statements that uses temp stack s to hold data of d to be able to adjust stack
+        d without interfering with it. So you would store those less than w from front of d, store it in s, then add w
+        to front of d, then add elements stored in s back into d. This ensures they are placed in proper order.
+
+       Issues and resolution: "Private field 'prev' is assigned but never accessed" - I dont really know what the issue
+       is since, i use prev on objects to access prevueueious elements.
+
+   Problem 3 (Random Queue)
+       Approach: ...
+
+       Issues and resolution:
+
+       org.opentest4j.AssertionFailedError:
+       java.lang.ArrayIndexOutOfBoundsException: Index -1 out of bounds for length 8
+
+
+   Problem 4 (Sampling Integers)
+       Approach: ...
+
+       Issues and resolution: ...
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+   ...
